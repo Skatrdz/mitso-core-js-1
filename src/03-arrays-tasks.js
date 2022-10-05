@@ -220,9 +220,7 @@ function toCsvText(arr) {
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
 function toArrayOfSquares(arr) {
-  let ans = []
-  arr.map((el) => ans.push(el*el));
-  return ans
+  return arr.map((el) => el*el);
 }
 
 /**
