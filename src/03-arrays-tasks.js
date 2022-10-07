@@ -270,10 +270,16 @@ function getSecondItems(/* arr */) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
+function propagateItemsByPositionIndex(arr) {
+  const transform = arr => arr.reduce((a, item, i) => (
+    // concat обьединяет новые массивы в 1
+    a.concat(Array.from( // с помощью array from создаём новые массивы
+      {length: i + 1}, // An iterable or array-like object to convert to an array.
+      () => item // Map function to call on every element of the array
+    ))
+  ), []);
+  return transform(arr)
 }
-
 /**
  * Returns the 3 largest numbers from the specified array
  *
