@@ -237,7 +237,7 @@ function encodeToRot13(/* str */) {
  */
 function isString(value) {
   console.log(typeof value === "string", value)
-  return typeof value === "string";
+  return typeof value === "string" || value instanceof String;
   // new string failure
 }
 
