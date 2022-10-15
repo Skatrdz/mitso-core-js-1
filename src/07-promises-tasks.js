@@ -32,8 +32,7 @@ const {type} = require("mocha/lib/utils");
 function willYouMarryMe(isPositiveAnswer) {
   return new Promise((resolve, reject) => {
     if (typeof isPositiveAnswer === "boolean") {
-      if (isPositiveAnswer === true) resolve('Hooray!!! She said "Yes"!')
-      resolve('Oh no, she said "No".')
+      resolve(isPositiveAnswer ? 'Hooray!!! She said "Yes"!' : 'Oh no, she said "No".')
     }
     reject(new Error('Wrong parameter is passed! Ask her again.')) // а неявное лучше явного относится к явным блокам else тоже?
   })
