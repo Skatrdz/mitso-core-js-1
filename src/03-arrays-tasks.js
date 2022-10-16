@@ -329,8 +329,12 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
+function sortDigitNamesByNumericOrder(arr) {
   template = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+  function compareNumbers(a, b) {
+    return template.indexOf(a) - template.indexOf(b);
+  }
+  return arr.sort(compareNumbers)
 }
 
 /**
